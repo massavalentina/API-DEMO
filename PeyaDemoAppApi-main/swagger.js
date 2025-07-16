@@ -11,8 +11,10 @@ const options = {
     },
     servers: [
       {
-        url: 'https://api-demo-1qf1.onrender.com',
-        description: 'Servidor local de desarrollo'
+        servers: [
+          { url: 'http://localhost:4000' },
+          { url: 'https://api-demo-1qf1.onrender.com' }
+        ]
       }
     ]
   },
