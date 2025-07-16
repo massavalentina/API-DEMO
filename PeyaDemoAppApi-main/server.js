@@ -14,6 +14,10 @@ mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('DB connection error:', err));
 
+app.get('/', (req, res) => {
+  res.send('¡Hola Vale! La API está corriendo en Render 🚀');
+});
+
 const foodRoutes = require('./routes/foods');
 app.use('/foods', foodRoutes);
 
@@ -24,10 +28,6 @@ const orderRoutes = require('./routes/orders');
 app.use('/orders', orderRoutes);
 
 app.get('/ping', (req, res) => res.send('pong'));
-
-app.get('/', (req, res) => {
-  res.send('¡Hola Vale! La API está corriendo en Render 🚀');
-});
 
 const setupSwagger = require('./swagger');
 setupSwagger(app);
