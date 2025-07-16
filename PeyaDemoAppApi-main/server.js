@@ -25,6 +25,10 @@ app.use('/orders', orderRoutes);
 
 app.get('/ping', (req, res) => res.send('pong'));
 
+app.get('/', (req, res) => {
+  res.send('¡Hola Vale! La API está corriendo en Render 🚀');
+});
+
 const setupSwagger = require('./swagger');
 setupSwagger(app);
 
